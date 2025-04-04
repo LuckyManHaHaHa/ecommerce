@@ -1,0 +1,18 @@
+@import "tailwindcss";
+.app {
+  &__header {
+    background: white;
+    padding: 0;
+  }
+  &__content {
+    background: white;
+    padding: 0 20px;
+  }
+  &__footer {
+    background: white;
+    padding: 0;
+  }
+  &__sider {
+    background: white;
+  }
+}
