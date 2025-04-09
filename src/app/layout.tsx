@@ -1,5 +1,6 @@
 "use client";
 import Sider from "../../components/sider/Sider";
+import "@ant-design/v5-patch-for-react-19";
 // antd
 import { Layout } from "antd";
 
