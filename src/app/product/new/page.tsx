@@ -11,7 +11,7 @@ const NewProduct = () => {
     productDescription: string;
   }) => {
     axios
-      .post("/api/productss", values)
+      .post("/api/product", values)
       .then((res) => {
         console.log("Product added:", res.data);
         form.resetFields();

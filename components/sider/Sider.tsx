@@ -58,7 +58,7 @@ const Slide: FC = () => {
           {
             key: "3",
             icon: <AppstoreOutlined />,
-            label: "Products",
+            label: "Product",
             onClick: () => {
               router.push("/product");
             },
