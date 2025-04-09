@@ -8,6 +8,8 @@ import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   SettingOutlined,
+  DatabaseOutlined,
+  HomeOutlined,
 } from "@ant-design/icons";
 
 const Slide: FC = () => {
@@ -33,6 +35,14 @@ const Slide: FC = () => {
         mode="inline"
         items={[
           {
+            key: "0",
+            icon: <HomeOutlined />,
+            label: "Home",
+            onClick: () => {
+              router.push("/");
+            },
+          },
+          {
             key: "1",
             icon: <UserOutlined />,
             label: "User",
@@ -49,9 +59,20 @@ const Slide: FC = () => {
             key: "3",
             icon: <AppstoreOutlined />,
             label: "Products",
+            onClick: () => {
+              router.push("/product");
+            },
           },
           {
             key: "4",
+            icon: <DatabaseOutlined />,
+            label: "Orders",
+            onClick: () => {
+              router.push("/product");
+            },
+          },
+          {
+            key: "5",
             icon: <SettingOutlined />,
             label: "Settings",
           },

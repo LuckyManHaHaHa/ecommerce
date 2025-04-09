@@ -1,4 +1,6 @@
 import { signIn, signOut, auth } from "../../../auth";
+import Image from "next/image";
+
 export default async function SignIn() {
   const session = await auth();
   const { user } = session || {};
@@ -14,6 +16,12 @@ export default async function SignIn() {
           <div className="text-[20px] text-black mt-2">
             Welcom <span className="font-medium">{user.name}</span>
           </div>
+          <Image
+            src={user?.image || "/default-profile.png"}
+            alt="User Profile"
+            width={50}
+            height={50}
+          />
           <button
             className="bg-blue-500 text-white rounded-md px-4 py-2 cursor-pointer"
             type="submit"
