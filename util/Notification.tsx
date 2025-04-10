@@ -5,5 +5,6 @@ export const openNotification = (args: NotificationArgsProps) => {
     ...args,
     placement: "topRight",
     duration: 5,
+    showProgress: true,
   });
 };

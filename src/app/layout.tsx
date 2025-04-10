@@ -4,6 +4,7 @@ import "@ant-design/v5-patch-for-react-19";
 // antd
 import { Layout, notification } from "antd";
 
+// style globals
 import "./globals.scss";
 
 export default function RootLayout({

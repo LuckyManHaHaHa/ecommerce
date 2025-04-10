@@ -18,3 +18,15 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json(productDoc);
 }
+export async function GET(req: NextRequest) {
+    await mongooseConnect();
+    const { searchParams } = new URL(req.url);
+    const id = searchParams.get("id");
+    if (id) {
+        const productDoc = await Product.findById(id);
+        return NextResponse.json(productDoc);
+    } else {
+        const productDocs = await Product.find();
+        return NextResponse.json(productDocs);
+    }
+}

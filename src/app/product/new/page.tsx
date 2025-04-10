@@ -3,10 +3,12 @@ import { useState } from "react";
 import axios from "axios";
 import { Form, Input, Button, InputNumber } from "antd";
 import { openNotification } from "@util/Notification";
+import { useRouter } from "next/navigation";
 
 const NewProduct = () => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState<boolean>(false);
+  const router = useRouter();
 
   const handleFinish = (values: {
     title: string;
@@ -22,14 +24,15 @@ const NewProduct = () => {
           description: "Product added successfully!",
           type: "success",
         });
+        form.resetFields();
+        router.push("/product");
       })
       .catch((error) => {
         openNotification({
           message: "Error",
-          description: "Failed to add product.",
+          description: error?.message || "Failed to add product.",
           type: "error",
         });
-        console.error("Error adding product:", error);
       })
       .finally(() => {
         setLoading(false);
