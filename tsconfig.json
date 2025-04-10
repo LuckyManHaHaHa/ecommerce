@@ -23,7 +23,8 @@
       "@components/*": ["./components/*"],
       "@models/*": ["./models/*"],
       "@mongoose/*": ["./lib/*"],
-      "@hooks/*": ["./hooks/*"]
+      // "@hooks/*": ["./util/hooks/*"],
+      "@util/*": ["./util/*"]
     }
   },
   "include": [

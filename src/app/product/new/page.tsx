@@ -2,7 +2,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { Form, Input, Button, InputNumber } from "antd";
-import { openNotification } from "@hooks/Notification";
+import { openNotification } from "@util/Notification";
 
 const NewProduct = () => {
   const [form] = Form.useForm();
