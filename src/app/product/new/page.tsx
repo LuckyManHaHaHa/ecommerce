@@ -2,6 +2,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { Form, Input, Button, InputNumber } from "antd";
+import { openNotification } from "@hooks/Notification";
 
 const NewProduct = () => {
   const [form] = Form.useForm();
@@ -15,10 +16,19 @@ const NewProduct = () => {
     setLoading(true);
     axios
       .post("/api/product", values)
-      .then((res) => {
-        console.log("Product added:", res.data);
+      .then(() => {
+        openNotification({
+          message: "Success",
+          description: "Product added successfully!",
+          type: "success",
+        });
       })
       .catch((error) => {
+        openNotification({
+          message: "Error",
+          description: "Failed to add product.",
+          type: "error",
+        });
         console.error("Error adding product:", error);
       })
       .finally(() => {

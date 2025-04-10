@@ -2,7 +2,7 @@
 import Sider from "../../components/sider/Sider";
 import "@ant-design/v5-patch-for-react-19";
 // antd
-import { Layout } from "antd";
+import { Layout, notification } from "antd";
 
 import "./globals.scss";
 
@@ -12,6 +12,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const { Header, Content, Footer } = Layout;
+  const [, contextHolder] = notification.useNotification();
+
   return (
     <html lang="en">
       <body>
@@ -19,7 +21,11 @@ export default function RootLayout({
           <Sider />
           <Layout>
             <Header className="app__header"></Header>
-            <Content className="app__content ">{children}</Content>
+
+            <Content className="app__content ">
+              {contextHolder}
+              {children}
+            </Content>
             <Footer className="text-center app__footer">Footer page</Footer>
           </Layout>
         </Layout>

@@ -19,3 +19,21 @@
 .ant-form-item {
   margin-bottom: 12px !important;
 }
+.ant-notification-notice {
+  &-success {
+    background: #f6ffed;
+    border-color: #b7eb8f;
+  }
+  &-info {
+    background: #e6f7ff;
+    border-color: #91d5ff;
+  }
+  &-warning {
+    background: #fffbe6;
+    border-color: #ffe58f;
+  }
+  &-error {
+    background: #fff1f0;
+    border-color: #ffa39e;
+  }
+}
