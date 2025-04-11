@@ -30,3 +30,14 @@ export async function GET(req: NextRequest) {
         return NextResponse.json(productDocs);
     }
 }
+export async function DELETE(req: NextRequest) {
+    await mongooseConnect();
+    const { searchParams } = new URL(req.url);
+    const id = searchParams.get("id");
+    if (id) {
+        await Product.findByIdAndDelete(id);
+        return NextResponse.json({ message: "Product deleted successfully." });
+    } else {
+        return NextResponse.json({ message: "Product ID is required." }, { status: 400 });
+    }
+}

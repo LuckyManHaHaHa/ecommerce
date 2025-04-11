@@ -1,5 +1,5 @@
 declare type Product = {
-    _id: number;
+    _id: string;
     key: number;
     name: string;
     price: number;
